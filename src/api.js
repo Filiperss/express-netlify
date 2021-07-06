@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 })
 
 //Integrate the router with the app
-app.use(router) // Bound the function to the directory, as required by Netlify
+app.use('/.netlify/functions/api', router) // Bound the function to the directory, as required by Netlify
 
 //Adapt the project to the serverless dependency
 module.exports.handler = serverless(app)
